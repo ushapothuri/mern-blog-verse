@@ -1,6 +1,7 @@
 import ProductCard from "./ProductCard.jsx"
 import NavBar from "./NavBar.jsx"
 import SignUp from "./SignUp.jsx"
+import SignIn from './SignIn.jsx'
 function App() {
  
 
@@ -8,7 +9,8 @@ function App() {
     <>
       <div >
         <NavBar/>
-        <SignUp/>
+       {/* <SignUp/> */}
+        <SignIn/>
        
       </div>
       
