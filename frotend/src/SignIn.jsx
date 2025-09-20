@@ -1,6 +1,13 @@
+import { Link } from 'react-router-dom'
+import NavBar from "./NavBar"
+import { Lock } from 'lucide-react';
+import { Mail } from 'lucide-react';
+
+
 const SignIn = () => {
     return (
-        <div className="flex justify-center">
+        <div className="flex flex-col items-center justify-center">
+            <NavBar />
             <div className="flex flex-col items-center mt-40 h-110 w-100  gap-3 border-1 rounded-xl ">
                 <div className="flex flex-col items-center gap-0.5">
                     <h1 className="font-bold text-2xl text-gray-900  mt-5">Sign In</h1>
@@ -9,16 +16,24 @@ const SignIn = () => {
 
                 <div className="w-[85%] flex flex-col gap-2" >
                     <p className=" text-gray-400 font-semibold">Email Address</p>
-                    <input type="email"
-                        placeholder="enter your email"
-                        className="border-1 w-full border-gray-700 px-4 py-3 rounded-2xl" />
+                    <div className='relative'>
+                        <input type="email"
+                            placeholder="enter your email"
+                            className="border-1 w-full border-gray-700 px-4 py-3 rounded-2xl pl-11" />
+                        <Mail className='absolute top-3 left-4' />
+                    </div>
+
                 </div>
 
                 <div className="flex flex-col gap-2 w-[85%]">
                     <p className="text-gray-500 font-semibold ">Password</p>
-                    <input type="password"
-                        placeholder="enter password"
-                        className="border-1 border-gray-700 px-4 py-3 rounded-xl " />
+                    <div className='relative'>
+                        <Lock className="absolute top-4 left-3" />
+                        <input type="password"
+                            placeholder="enter password"
+                            className="border-1 border-gray-700 px-4 py-3 rounded-xl pl-11 " />
+
+                    </div>
                 </div>
 
                 <div className="flex w-full justify-around ">
@@ -40,12 +55,11 @@ const SignIn = () => {
 
                 <div className="flex ">
                     <p>Don't have an account?</p>
-                    <span>Create one here</span>
+                    <Link to='/signup' className='text-blue-500'>Create one here</Link>
                 </div>
             </div>
         </div>
     )
 }
-
 
 export default SignIn
